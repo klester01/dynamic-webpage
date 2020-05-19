@@ -24,8 +24,9 @@ function initialize(passport, getUserByEmail, getUserById) {
     passport.use(new LocalStrategy({ usernameField: 'email' },
         authenticateUser)) //by default the usernameField is username but we are
     //using email so we need to enter email in this object.
+
     passport.serializeUser((user, done) => done(null, user.id))//serialize user to store inside session
-    passport.deserializeUser((id, done) => {//deserialize user with an id
+    passport.deserializeUser((id, done) => {
         return done(null, getUserById(id))
     })
 }

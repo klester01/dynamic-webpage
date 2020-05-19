@@ -42,7 +42,10 @@
                   </div>
               </div>
             </div>
-            <h1>Hi! <%= name %> </h1>
+            <h1 class='text-center'> Hi! <%= name %>, Welcome to the Price-Is-Right-Game!!</h1>
+            <form action="/logout?_method=DELETE" method="POST">
+                <br> <button type="submit">Log Out</button> </br>
+            </form>
     <!--This is for the footer and copyright info-->
     <div id="footer">
         <p id="footerText" class="text-center"> &copy; Copyright Price-Is-Right 2020</p>
