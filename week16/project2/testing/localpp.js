@@ -14,19 +14,10 @@ initializePassport(
     email => users.find(user => user.email === email),
     id => users.find(user => user.id === id)
 )
-const users = [];//storing locally instead of on the persist database to test logic.
-/*
-//Implementing a passport local strategy on passport/config.js file to keep code clean
+const users = [];//storing locally instead of on the persist database to test logic. Replace with database
 
-app.post('/login',
-    passport.authenticate('local', { failureRedirect: '/login' }),
-    function (req, res) {
-        res.redirect('/');
-    });
-*/
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-
 app.use(express.urlencoded({ extended: false })) //this allows for the fields (password/email) on the form page to be access inside the req variable inside the login POST method
 app.use(flash())
 app.use(session({
